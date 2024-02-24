@@ -1,17 +1,20 @@
-﻿namespace FlightDataAnalysis.Data.Models;
-
-/// <summary>
-/// Provides data loader config.
-/// </summary>
-public class DataLoaderConfig
+﻿namespace FlightDataAnalysis.Data.Models
 {
-    /// <summary>
-    /// Gets or sets the path.
-    /// </summary>
-    public string Path { get; set; }
+    using FlightDataAnalysis.Data.Constants;
 
     /// <summary>
-    /// Gets or sets delimiter.
+    /// Provides data loader config.
     /// </summary>
-    public string Delimiter { get; set; }
+    public class DataLoaderConfig
+    {
+        /// <summary>
+        /// Gets or sets the path.
+        /// </summary>
+        public string Path { get; set; }
+
+        /// <summary>
+        /// Gets or sets delimiter.
+        /// </summary>
+        public string Delimiter { get; set; } = DataLoaderConstants.DefaultDelimiter;
+    }
 }
