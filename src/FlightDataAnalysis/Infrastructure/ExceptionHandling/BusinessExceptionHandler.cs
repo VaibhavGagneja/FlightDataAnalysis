@@ -1,9 +1,9 @@
-﻿using Microsoft.AspNetCore.Diagnostics;
-using Microsoft.Extensions.Logging;
-using System.Net;
-
-namespace FlightDataAnalysis.Infrastructure.ExceptionHandling
+﻿namespace FlightDataAnalysis.Infrastructure.ExceptionHandling
 {
+    using System.Net;
+    using Microsoft.AspNetCore.Diagnostics;
+    using Microsoft.Extensions.Logging;
+
     public class BusinessExceptionHandler(ILogger<BusinessExceptionHandler> logger): IExceptionHandler
     {
         public async ValueTask<bool> TryHandleAsync(
