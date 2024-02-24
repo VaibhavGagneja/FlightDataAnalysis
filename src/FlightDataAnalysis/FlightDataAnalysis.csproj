@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <PackageReference Include="Asp.Versioning.Mvc.ApiExplorer" Version="8.0.0" />
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="8.0.2" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.5" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
@@ -29,6 +30,16 @@
     <ProjectReference Include="..\FlightDataAnalysis.Business\FlightDataAnalysis.Business.csproj" />
     <ProjectReference Include="..\FlightDataAnalysis.Core\FlightDataAnalysis.Core.csproj" />
     <ProjectReference Include="..\FlightDataAnalysis.Data\FlightDataAnalysis.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="seed\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="seed\flights.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

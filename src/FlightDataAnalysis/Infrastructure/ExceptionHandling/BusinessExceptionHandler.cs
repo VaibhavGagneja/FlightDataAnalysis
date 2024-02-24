@@ -8,9 +8,19 @@
     /// <summary>
     /// Custom exception handler for business validation.
     /// </summary>
-    /// <param name="logger">The logger.</param>
-    public class BusinessExceptionHandler(ILogger<BusinessExceptionHandler> logger) : IExceptionHandler
+    public class BusinessExceptionHandler : IExceptionHandler
     {
+        private readonly ILogger<BusinessExceptionHandler> logger;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BusinessExceptionHandler"/> class.
+        /// </summary>
+        /// <param name="logger">The logger.</param>
+        public BusinessExceptionHandler(ILogger<BusinessExceptionHandler> logger)
+        {
+            this.logger = logger;
+        }
+
         /// <summary>
         /// Handles business exception.
         /// </summary>
@@ -23,7 +33,7 @@
             Exception exception,
             CancellationToken cancellationToken)
         {
-            logger.LogError($"Bad request exception: {exception.Message}");
+            this.logger.LogError($"Bad request exception: {exception.Message}");
             if (exception is not BusinessException businessException)
             {
                 return false;

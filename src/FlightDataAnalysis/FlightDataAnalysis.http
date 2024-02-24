@@ -1,6 +1,22 @@
 @FlightDataAnalysis_HostAddress = http://localhost:5159
 
-GET {{FlightDataAnalysis_HostAddress}}/weatherforecast/
+GET {{FlightDataAnalysis_HostAddress}}/api/v1/flight
+Accept: application/json
+
+###
+
+
+GET {{FlightDataAnalysis_HostAddress}}/api/v1/flight/1
+Accept: application/json
+
+###
+
+GET {{FlightDataAnalysis_HostAddress}}/api/v1/flight/options
+Accept: application/json
+
+###
+
+GET {{FlightDataAnalysis_HostAddress}}/api/v1/flightAnalysis
 Accept: application/json
 
 ###

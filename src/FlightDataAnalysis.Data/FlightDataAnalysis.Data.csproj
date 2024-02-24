@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
     <NoWarn>SA1633</NoWarn>
   </PropertyGroup>
 
@@ -11,6 +11,7 @@
     <AdditionalFiles Include="..\..\Solution Items\stylecop.json" Link="stylecop.json" />
   </ItemGroup>
   <ItemGroup>	
+    <PackageReference Include="CsvHelper" Version="31.0.0" />	
     <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

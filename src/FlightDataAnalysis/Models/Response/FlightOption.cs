@@ -1,6 +1,4 @@
-﻿using Newtonsoft.Json;
-
-namespace FlightDataAnalysis.Models.Response;
+﻿namespace FlightDataAnalysis.Models.Response;
 
 /// <summary>
 /// Flight option data transfer object.

@@ -1,5 +1,7 @@
 ﻿namespace FlightDataAnalysis.Data.Loader
 {
+    using FlightDataAnalysis.Data.Models;
+
     /// <summary>
     /// Provides actions to load data set.
     /// </summary>
@@ -8,7 +10,7 @@
         /// <summary>
         /// Loads data set into system.
         /// </summary>
-        /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
-        Task Load();
+        /// <param name="config">The data loader config.</param>
+        void Load(DataLoaderConfig config);
     }
 }
