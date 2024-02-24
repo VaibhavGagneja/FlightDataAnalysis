@@ -1,9 +1,12 @@
-﻿using System.Net;
-using Microsoft.AspNetCore.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
-
-namespace FlightDataAnalysis.Infrastructure.ExceptionHandling
+﻿namespace FlightDataAnalysis.Infrastructure.ExceptionHandling
 {
+    using System.Net;
+    using Microsoft.AspNetCore.Diagnostics;
+    using Microsoft.AspNetCore.Mvc;
+
+    /// <summary>
+    /// The global exception handler.
+    /// </summary>
     public class GlobalExceptionHandler : IExceptionHandler
     {
         private readonly ILogger<GlobalExceptionHandler> logger;
@@ -13,6 +16,13 @@ namespace FlightDataAnalysis.Infrastructure.ExceptionHandling
             this.logger = logger;
         }
 
+        /// <summary>
+        /// Handles exception.
+        /// </summary>
+        /// <param name="httpContext">The http context.</param>
+        /// <param name="exception">The exception.</param>
+        /// <param name="cancellationToken">The cancellation token.</param>
+        /// <returns>returns an instance of <see cref="ValueTask"/>.</returns>
         public async ValueTask<bool> TryHandleAsync(
             HttpContext httpContext,
             Exception exception,

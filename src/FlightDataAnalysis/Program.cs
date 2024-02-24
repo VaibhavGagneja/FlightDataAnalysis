@@ -1,6 +1,3 @@
-using FlightDataAnalysis.Infrastructure.Mvc;
-using FlightDataAnalysis.Infrastructure.Swagger;
-
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.RegisterMvc();
