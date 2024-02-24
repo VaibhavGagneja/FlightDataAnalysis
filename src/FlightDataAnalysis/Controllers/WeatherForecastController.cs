@@ -1,7 +1,7 @@
-using Microsoft.AspNetCore.Mvc;
-
 namespace FlightDataAnalysis.Controllers
 {
+    using Microsoft.AspNetCore.Mvc;
+
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
