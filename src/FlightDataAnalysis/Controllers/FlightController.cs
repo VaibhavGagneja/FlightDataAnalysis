@@ -2,6 +2,8 @@
 {
     using System.Net.Mime;
     using Asp.Versioning;
+    using FlightDataAnalysis.Business.Models;
+    using FlightDataAnalysis.Business.Services;
     using Microsoft.AspNetCore.Mvc;
 
     /// <summary>
@@ -15,6 +17,17 @@
     [ProducesResponseType<ProblemDetails>(StatusCodes.Status500InternalServerError)]
     public class FlightController : ControllerBase
     {
+        private readonly IFlightService flightService;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FlightController"/> class.
+        /// </summary>
+        /// <param name="flightService">The flight service.</param>
+        public FlightController(IFlightService flightService)
+        {
+            this.flightService = flightService;
+        }
+
         /// <summary>
         /// Gets all flight details.
         /// </summary>
@@ -23,33 +36,33 @@
         [ProducesResponseType<IReadOnlyCollection<Flight>>(StatusCodes.Status200OK)]
         public IReadOnlyCollection<Flight> Get()
         {
-            return new List<Flight>();
+            return this.flightService.GetFlights();
         }
 
         /// <summary>
         /// Gets flight details by flight id.
         /// </summary>
-        /// <param name="flightRequest">The flight request.</param>
+        /// <param name="id">The flight id.</param>
         /// <returns>returns an instance <see cref="Flight"/>.</returns>
         [HttpGet]
         [Route("{id}")]
         [ProducesResponseType<Flight>(StatusCodes.Status200OK)]
         [ProducesResponseType<Flight>(StatusCodes.Status200OK)]
-        public Flight GetById(GetFlightRequest flightRequest)
+        public Flight GetById(int id)
         {
-            return new Flight();
+            return this.flightService.GetFlightById(id);
         }
 
         /// <summary>
         /// Gets flight options.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>returns <see cref="IReadOnlyCollection{FlightOption}"/>.</returns>
         [HttpGet]
         [Route("options")]
         [ProducesResponseType<IReadOnlyCollection<FlightOption>>(StatusCodes.Status200OK)]
         public IReadOnlyCollection<FlightOption> GetOptions()
         {
-            return new List<FlightOption>();
+            return this.flightService.GetFlightOptions();
         }
     }
 }

@@ -11,10 +11,15 @@
     <AdditionalFiles Include="..\..\Solution Items\stylecop.json" Link="stylecop.json" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="8.0.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FlightDataAnalysis.Data\FlightDataAnalysis.Data.csproj" />
   </ItemGroup>
 
 </Project>

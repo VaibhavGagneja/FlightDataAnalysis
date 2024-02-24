@@ -1,4 +1,6 @@
-﻿namespace FlightDataAnalysis.Infrastructure.AutoMapper.Profiles
+﻿using FlightDataAnalysis.Business.Models;
+
+namespace FlightDataAnalysis.Infrastructure.AutoMapper.Profiles
 {
     using FlightDataAnalysis.Data.Models;
 
@@ -13,7 +15,7 @@
         public FlightProfile()
         {
             this.CreateMap<FlightEntity, Flight>();
-            this.CreateMap<FlightOption, Flight>();
+            this.CreateMap<FlightEntity, FlightOption>();
         }
     }
 }

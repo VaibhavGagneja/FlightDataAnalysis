@@ -16,7 +16,7 @@
             this.Map(x => x.Id).Name("id");
             this.Map(x => x.AircraftRegistrationNumber).Name("aircraft_registration_number");
             this.Map(x => x.AircraftType).Name("aircraft_type");
-            this.Map(x => x.ArrivalAirport).Name("flight_number");
+            this.Map(x => x.FlightNumber).Name("flight_number");
             this.Map(x => x.DepartureAirport).Name("departure_airport");
             this.Map(x => x.DepartureDatetime).Name("departure_datetime");
             this.Map(x => x.ArrivalAirport).Name("arrival_airport");

@@ -1,4 +1,4 @@
-﻿namespace FlightDataAnalysis.Models.Request;
+﻿namespace FlightDataAnalysis.Models.Response;
 
 /// <summary>
 /// Error response for business validation.

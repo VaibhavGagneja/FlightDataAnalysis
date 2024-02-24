@@ -2,6 +2,7 @@
 {
     using System.Net;
     using FlightDataAnalysis.Core.BusinessException;
+    using FlightDataAnalysis.Models.Response;
     using Microsoft.AspNetCore.Diagnostics;
     using Microsoft.Extensions.Logging;
 

@@ -20,8 +20,7 @@
             services.AddScoped<IDataLoader, DataLoader>();
             services.AddScoped<IDataReader, CsvDataReader>();
             services.AddScoped<IDataProvider, DataProvider>();
-            services.AddScoped<IDataSource, DataSource>();
-            services.AddScoped<IDataSource, DataSource>();
+            services.AddSingleton<IDataSource, DataSource>();
 
             return services;
         }
