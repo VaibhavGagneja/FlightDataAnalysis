@@ -26,7 +26,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\Response\" />
+    <ProjectReference Include="..\FlightDataAnalysis.Business\FlightDataAnalysis.Business.csproj" />
+    <ProjectReference Include="..\FlightDataAnalysis.Core\FlightDataAnalysis.Core.csproj" />
+    <ProjectReference Include="..\FlightDataAnalysis.Data\FlightDataAnalysis.Data.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,9 +1,7 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
-
-namespace FlightDataAnalysis.Infrastructure.Mvc
+﻿namespace FlightDataAnalysis.Infrastructure.Mvc
 {
     using Asp.Versioning;
+    using Newtonsoft.Json.Serialization;
 
     /// <summary>
     /// Provides actions to configure mvc setting.

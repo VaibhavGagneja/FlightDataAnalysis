@@ -12,6 +12,7 @@
     [ApiVersion("1.0")]
     [Consumes(MediaTypeNames.Application.Json)]
     [Produces(MediaTypeNames.Application.Json)]
+    [ProducesResponseType<ProblemDetails>(StatusCodes.Status500InternalServerError)]
     public class FlightAnalysisController : ControllerBase
     {
         [HttpGet]

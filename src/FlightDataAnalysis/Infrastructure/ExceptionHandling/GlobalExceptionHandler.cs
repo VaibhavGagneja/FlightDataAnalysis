@@ -11,6 +11,10 @@
     {
         private readonly ILogger<GlobalExceptionHandler> logger;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GlobalExceptionHandler"/> class.
+        /// </summary>
+        /// <param name="logger">The logger.</param>
         public GlobalExceptionHandler(ILogger<GlobalExceptionHandler> logger)
         {
             this.logger = logger;
