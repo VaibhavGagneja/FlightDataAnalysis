@@ -1,4 +1,4 @@
-﻿namespace FlightDataAnalysis.Business.Services.Implementations.ValidationChain
+﻿namespace FlightDataAnalysis.Business.Services.Implementations
 {
     using FlightDataAnalysis.Business.Models;
     using FlightDataAnalysis.Business.Services;

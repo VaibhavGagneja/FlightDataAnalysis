@@ -38,7 +38,7 @@
             /// <summary>
             /// Provides URL for flight analysis.
             /// </summary>
-            internal const string FlightAnalysisUrl = "api/v1/flightAnalysis";
+            internal const string FlightAnalysisUrl = "api/v1/flight-analysis";
         }
     }
 }

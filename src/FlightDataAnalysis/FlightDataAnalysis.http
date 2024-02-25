@@ -16,7 +16,7 @@ Accept: application/json
 
 ###
 
-GET {{FlightDataAnalysis_HostAddress}}/api/v1/flightAnalysis
+GET {{FlightDataAnalysis_HostAddress}}/api/v1/flight-analysis
 Accept: application/json
 
 ###

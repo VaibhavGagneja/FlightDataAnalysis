@@ -9,7 +9,7 @@
     /// <summary>
     /// Provides HTTP endpoints for flight analysis.
     /// </summary>
-    [Route("api/v1/flightAnalysis")]
+    [Route("api/v1/flight-analysis")]
     [ApiController]
     [ApiVersion("1.0")]
     [Consumes(MediaTypeNames.Application.Json)]
