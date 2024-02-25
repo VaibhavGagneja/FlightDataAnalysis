@@ -1,7 +1,6 @@
-﻿using FlightDataAnalysis.Business.Models;
-
-namespace FlightDataAnalysis.Infrastructure.AutoMapper.Profiles
+﻿namespace FlightDataAnalysis.Infrastructure.AutoMapper.Profiles
 {
+    using FlightDataAnalysis.Business.Models;
     using FlightDataAnalysis.Data.Models;
 
     /// <summary>

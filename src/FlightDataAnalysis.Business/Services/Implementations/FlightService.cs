@@ -2,6 +2,7 @@
 {
     using AutoMapper;
     using FlightDataAnalysis.Business.Models;
+    using FlightDataAnalysis.Core.BusinessException;
     using FlightDataAnalysis.Data.Provider;
 
     /// <inheritdoc />
@@ -33,6 +34,11 @@
         public Flight GetFlightById(int id)
         {
             var flight = this.provider.GetFlightById(id);
+
+            if (flight == null)
+            {
+                throw new EntityNotFoundException(nameof(Flight), $"{id}");
+            }
 
             return this.mapper.Map<Flight>(flight);
         }

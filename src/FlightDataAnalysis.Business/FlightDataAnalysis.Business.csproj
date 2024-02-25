@@ -19,6 +19,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="8.0.2" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FlightDataAnalysis.Core\FlightDataAnalysis.Core.csproj" />
     <ProjectReference Include="..\FlightDataAnalysis.Data\FlightDataAnalysis.Data.csproj" />
   </ItemGroup>
 

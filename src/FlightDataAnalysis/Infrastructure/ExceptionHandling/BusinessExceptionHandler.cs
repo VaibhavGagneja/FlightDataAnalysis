@@ -35,15 +35,15 @@
             CancellationToken cancellationToken)
         {
             this.logger.LogError($"Bad request exception: {exception.Message}");
-            if (exception is not BusinessException businessException)
+            if (exception is not BusinessException && exception is not EntityNotFoundException)
             {
                 return false;
             }
 
             var errorResponse = new BusinessErrorResponse
             {
-                StatusCode = (int)HttpStatusCode.UnprocessableEntity,
-                ErrorMessage = businessException.Message,
+                StatusCode = exception is not EntityNotFoundException ? (int)HttpStatusCode.UnprocessableEntity : (int)HttpStatusCode.NotFound,
+                ErrorMessage = exception.Message,
             };
             httpContext.Response.StatusCode = errorResponse.StatusCode;
             await httpContext.Response.WriteAsJsonAsync(errorResponse, cancellationToken);

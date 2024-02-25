@@ -2,6 +2,7 @@
 {
     using FlightDataAnalysis.Business.Services;
     using FlightDataAnalysis.Business.Services.Implementations;
+    using FlightDataAnalysis.Business.Services.Implementations.ValidationChain;
 
     /// <summary>
     /// Provides actions to register business dependencies.
@@ -17,6 +18,14 @@
         {
             services.AddScoped<IFlightService, FlightService>();
             services.AddScoped<IFlightAnalysisService, FlightAnalysisService>();
+            services.AddScoped<IValidationHandler>(x =>
+            {
+                var handler = Activator.CreateInstance<PrerequisiteHandler>();
+                handler.SetNext(Activator.CreateInstance<InconsistencyHandler>());
+
+                return handler;
+            });
+            services.AddScoped<IInconsistencyValidator, InconsistencyValidator>();
 
             return services;
         }
