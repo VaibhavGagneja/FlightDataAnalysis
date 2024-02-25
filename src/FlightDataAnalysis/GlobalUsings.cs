@@ -1,4 +1,4 @@
-#pragma warning disable SA1200 // Using directives should be placed correctly
+#pragma warning disable SA1200
 global using AutoMapper;
 global using FlightDataAnalysis.Infrastructure.AutoMapper;
 global using FlightDataAnalysis.Infrastructure.Business;
@@ -8,4 +8,4 @@ global using FlightDataAnalysis.Infrastructure.Initializer;
 global using FlightDataAnalysis.Infrastructure.Mvc;
 global using FlightDataAnalysis.Infrastructure.Swagger;
 global using Newtonsoft.Json;
-#pragma warning restore SA1200 // Using directives should be placed correctly
+#pragma warning restore SA1200
