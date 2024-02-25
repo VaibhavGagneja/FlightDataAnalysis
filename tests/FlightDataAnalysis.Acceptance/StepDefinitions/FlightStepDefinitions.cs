@@ -1,9 +1,9 @@
 ﻿namespace FlightDataAnalysis.Acceptance.StepDefinitions
 {
     using System.Net;
+    using System.Net.Http.Json;
     using FlightDataAnalysis.Acceptance.Constants;
     using TechTalk.SpecFlow.Assist;
-    using System.Net.Http.Json;
 
     /// <summary>
     /// Steps definition files for flight.
