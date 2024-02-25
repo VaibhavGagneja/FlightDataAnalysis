@@ -3,6 +3,7 @@
     using System.Net;
     using System.Net.Http.Json;
     using FlightDataAnalysis.Acceptance.Constants;
+    using FlightDataAnalysis.Models.Response;
     using TechTalk.SpecFlow.Assist;
 
     /// <summary>
@@ -18,6 +19,7 @@
         /// Initializes a new instance of the <see cref="FlightStepDefinitions"/> class.
         /// </summary>
         /// <param name="httpClient">The http client.</param>
+        /// <param name="scenarioContext">The scenario context.</param>
         public FlightStepDefinitions(HttpClient httpClient, ScenarioContext scenarioContext)
         {
             this.httpClient = httpClient;
@@ -102,11 +104,20 @@
         /// </summary>
         /// <param name="entity">The entity name.</param>
         /// <param name="id">The entity id.</param>
+        /// <returns>returns an instance of <see cref="Task"/>.</returns>
         [Then(@"The system returns the entity not found for entity ""([^""]*)"" and entity id ""([^""]*)""")]
-        public void ThenTheSystemReturnsTheEntityNotFoundForEntityAndEntityId(string entity, string id)
+        public async Task ThenTheSystemReturnsTheEntityNotFoundForEntityAndEntityId(string entity, string id)
         {
             ((HttpResponseMessage)this.scenarioContext[TestConstants.HttpResponseScenarioKey]).StatusCode.Should()
                 .Be(HttpStatusCode.NotFound);
+
+            var errorResponse = await ((HttpResponseMessage)this.scenarioContext[TestConstants.HttpResponseScenarioKey])
+                .Content.ReadFromJsonAsync<BusinessErrorResponse>();
+
+            errorResponse.Should().BeEquivalentTo(new BusinessErrorResponse
+            {
+                StatusCode = (int)HttpStatusCode.NotFound, ErrorMessage = $"{entity} not found by {id}",
+            });
         }
 
         /// <summary>

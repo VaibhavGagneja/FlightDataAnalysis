@@ -4,7 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <NoWarn>SA1633</NoWarn>
+    <NoWarn>SA1633,SA0001,SA1200</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
@@ -21,12 +21,6 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\FlightDataAnalysis\FlightDataAnalysis.csproj" />
   </ItemGroup>
-
-  <ItemGroup>
-    <None Update="test-seed\flights.csv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
   
   <ItemGroup>
     <AdditionalFiles Include="..\..\Solution Items\stylecop.json" Link="stylecop.json" />
@@ -37,6 +31,12 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Content Include="test-seed\flights.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

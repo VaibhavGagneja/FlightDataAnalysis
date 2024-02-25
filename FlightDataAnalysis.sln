@@ -7,6 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 		.gitignore = .gitignore
+		Dockerfile = Dockerfile
 		Solution Items\stylecop.json = Solution Items\stylecop.json
 	EndProjectSection
 EndProject
@@ -24,7 +25,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlightDataAnalysis.Business
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlightDataAnalysis.Core", "src\FlightDataAnalysis.Core\FlightDataAnalysis.Core.csproj", "{B7BF59E2-F4A7-44AA-8E54-CB69712A6877}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightDataAnalysis.Data", "src\FlightDataAnalysis.Data\FlightDataAnalysis.Data.csproj", "{4F9E236D-9337-4853-A102-877C777D90B0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlightDataAnalysis.Data", "src\FlightDataAnalysis.Data\FlightDataAnalysis.Data.csproj", "{4F9E236D-9337-4853-A102-877C777D90B0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

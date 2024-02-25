@@ -7,11 +7,17 @@
     <InvariantGlobalization>true</InvariantGlobalization>
     <UserSecretsId>e3b5ac8b-ba87-46a3-a332-ca34b0fe6f79</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
-    <NoWarn>SA1633,SA0001</NoWarn>
+    <NoWarn>SA1633,SA0001,SA1200</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
     <AdditionalFiles Include="..\..\Solution Items\stylecop.json" Link="stylecop.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="seed\flights.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
@@ -30,12 +36,6 @@
     <ProjectReference Include="..\FlightDataAnalysis.Business\FlightDataAnalysis.Business.csproj" />
     <ProjectReference Include="..\FlightDataAnalysis.Core\FlightDataAnalysis.Core.csproj" />
     <ProjectReference Include="..\FlightDataAnalysis.Data\FlightDataAnalysis.Data.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="seed\flights.csv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
 
   <ItemGroup>
