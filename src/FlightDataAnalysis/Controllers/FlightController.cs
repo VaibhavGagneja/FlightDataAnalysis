@@ -4,6 +4,7 @@
     using Asp.Versioning;
     using FlightDataAnalysis.Business.Models;
     using FlightDataAnalysis.Business.Services;
+    using FlightDataAnalysis.Models.Response;
     using Microsoft.AspNetCore.Mvc;
 
     /// <summary>
@@ -47,7 +48,7 @@
         [HttpGet]
         [Route("{id}")]
         [ProducesResponseType<Flight>(StatusCodes.Status200OK)]
-        [ProducesResponseType<Flight>(StatusCodes.Status200OK)]
+        [ProducesResponseType<BusinessErrorResponse>(StatusCodes.Status404NotFound)]
         public Flight GetById(int id)
         {
             return this.flightService.GetFlightById(id);
