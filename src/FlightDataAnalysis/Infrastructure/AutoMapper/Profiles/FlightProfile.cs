@@ -15,6 +15,11 @@
         {
             this.CreateMap<FlightEntity, Flight>();
             this.CreateMap<FlightEntity, FlightOption>();
+            this.CreateMap<PagedList<FlightEntity>, PagedList<Flight>>()
+                .ForMember(x => x.PageSize, o => o.MapFrom(x => x.PageSize))
+                .ForMember(x => x.TotalCount, o => o.MapFrom(x => x.TotalCount))
+                .ForMember(x => x.TotalPagesCount, o => o.MapFrom(x => x.TotalPagesCount))
+                .ForMember(x => x.Items, o => o.MapFrom(x => x.Items));
         }
     }
 }

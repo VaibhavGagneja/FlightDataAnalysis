@@ -1,12 +1,10 @@
-﻿using FlightDataAnalysis.Data.Models;
-using FlightDataAnalysis.Models.Requests;
-
-namespace FlightDataAnalysis.Controllers
+﻿namespace FlightDataAnalysis.Controllers
 {
     using System.Net.Mime;
     using Asp.Versioning;
     using FlightDataAnalysis.Business.Models;
     using FlightDataAnalysis.Business.Services;
+    using FlightDataAnalysis.Models.Requests;
     using FlightDataAnalysis.Models.Response;
     using Microsoft.AspNetCore.Mvc;
 
@@ -76,8 +74,8 @@ namespace FlightDataAnalysis.Controllers
         /// <returns>returns <see cref="IReadOnlyCollection{FlightOption}"/>.</returns>
         [HttpGet]
         [Route("paged")]
-        [ProducesResponseType<PagedList<FlightEntity>>(StatusCodes.Status200OK)]
-        public PagedList<FlightEntity> GetPaged([FromQuery] PagedRequest request)
+        [ProducesResponseType<PagedList<Flight>>(StatusCodes.Status200OK)]
+        public PagedList<Flight> GetPaged([FromQuery] PagedRequest request)
         {
             return this.flightService.GetPaged(request.PageNumber, request.PageSize);
         }

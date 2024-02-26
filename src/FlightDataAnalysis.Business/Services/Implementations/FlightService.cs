@@ -3,7 +3,6 @@
     using AutoMapper;
     using FlightDataAnalysis.Business.Models;
     using FlightDataAnalysis.Core.BusinessException;
-    using FlightDataAnalysis.Data.Models;
     using FlightDataAnalysis.Data.Provider;
 
     /// <inheritdoc />
@@ -53,11 +52,11 @@
         }
 
         /// <inheritdoc/>
-        public PagedList<FlightEntity> GetPaged(int pageNumber, int pageSize)
+        public PagedList<Flight> GetPaged(int pageNumber, int pageSize)
         {
             var results = this.provider.GetFlights();
 
-            return PageListConverter.ToPagedList(results, pageNumber, pageSize);
+            return this.mapper.Map<PagedList<Flight>>(PageListConverter.ToPagedList(results, pageNumber, pageSize));
         }
     }
 }

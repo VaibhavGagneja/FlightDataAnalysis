@@ -1,4 +1,6 @@
-﻿namespace FlightDataAnalysis.Acceptance.StepDefinitions
+﻿using FlightDataAnalysis.Business.Models;
+
+namespace FlightDataAnalysis.Acceptance.StepDefinitions
 {
     using System.Net;
     using System.Net.Http.Json;
@@ -130,6 +132,49 @@
             var response = await this.httpClient.GetAsync(Urls.Urls.Flight.FlightOptionsUrl);
 
             this.scenarioContext[TestConstants.HttpResponseScenarioKey] = response;
+        }
+
+        /// <summary>
+        /// Calls flight paged api.
+        /// </summary>
+        /// <param name="number">Page number.</param>
+        /// <param name="size">Page size.</param>
+        /// <returns>returns an instance of <see cref="Task"/>.</returns>
+        [When(@"Flight paged api is called by page size ""([^""]*)"" page number ""([^""]*)""")]
+        public async Task WhenFlightPagedApiIsCalledByPageSizePageNumber(string size, string number)
+        {
+            var response = await this.httpClient.GetAsync(Urls.Urls.Flight.FlightPagedUrl(int.Parse(number), int.Parse(size)));
+
+            this.scenarioContext[TestConstants.HttpResponseScenarioKey] = response;
+        }
+
+        /// <summary>
+        /// Validates paged response.
+        /// </summary>
+        /// <param name="totalPage">Total pages.</param>
+        /// <param name="totalCount">Total items count.</param>
+        /// <param name="pageSize">Page size.</param>
+        /// <param name="table">The items.</param>
+        /// <returns>returns an instance of <see cref="Task"/>.</returns>
+        [Then(@"The system returns the flight details total pages ""([^""]*)"" total count ""([^""]*)"" and page size ""([^""]*)""")]
+        public async Task ThenTheSystemReturnsTheFlightDetailsTotalPagesTotalCountAndPageSize(
+            string totalPage,
+            string totalCount,
+            string pageSize,
+            Table table)
+        {
+            var response = await ((HttpResponseMessage)this.scenarioContext[TestConstants.HttpResponseScenarioKey])
+                .Content.ReadFromJsonAsync<PagedList<Flight>>();
+
+            var expected = new PagedList<Flight>()
+            {
+                PageSize = int.Parse(pageSize),
+                TotalCount = int.Parse(totalCount),
+                TotalPagesCount = int.Parse(totalPage),
+                Items = table.CreateSet<Flight>().ToList(),
+            };
+
+            expected.Should().BeEquivalentTo(response);
         }
     }
 }

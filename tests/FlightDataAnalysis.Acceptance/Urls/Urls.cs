@@ -28,6 +28,15 @@
             /// <param name="id">The flight id.</param>
             /// <returns>returns the flight url.</returns>
             internal static string FlightsById(string id) => $"{FlightsUrl}/{id}";
+
+            /// <summary>
+            /// Provides paged url.
+            /// </summary>
+            /// <param name="pageSize">The page size.</param>
+            /// <param name="pageNumber">The page number.</param>
+            /// <returns>returns the paged url.</returns>
+            internal static string FlightPagedUrl(int pageNumber, int pageSize) => $"{Prefix}/paged?pageNumber={pageNumber}&pageSize={pageSize}";
+
         }
 
         /// <summary>

@@ -38,3 +38,10 @@ Scenario: Get flight options
     | 999  | C-RIB                      |
     | 998  | C-RIB                      |
     | 1000 | C-RIB                      |
+
+Scenario: Get flight by pagination 
+    When Flight paged api is called by page size "2" page number "1"
+    Then The system returns the flight details total pages "4" total count "8" and page size "2"
+    | Id   | AircraftRegistrationNumber | AircraftType | FlightNumber | DepartureAirport | DepartureDatetime   | ArrivalAirport | ArrivalDatetime     |
+    | 1    | ZX-IKD                     | 350          | M645         | HEL              | 2024-01-02 21:46:27 | DXB            | 2024-01-03 02:31:27 |
+    | 996  | G-DIX                      | 320          | AY120        | HEL              | 2024-01-30 14:00:00 | OUL            | 2024-01-30 15:30:00 |
