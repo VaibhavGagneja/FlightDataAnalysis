@@ -34,12 +34,9 @@
                 inConsistentFlights.Add(nextFlight);
             }
 
-            if (inConsistentFlights.Any())
-            {
-                return new InconsistencyResult(inConsistentFlights);
-            }
-
-            return base.Validate(flightEntities);
+            return inConsistentFlights.Any()
+                ? new InconsistencyResult(inConsistentFlights)
+                : base.Validate(flightEntities);
         }
     }
 }

@@ -39,7 +39,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <InternalsVisibleTo Include="FlightDataAnalysis.Acceptance"/>
+    <InternalsVisibleTo Include="FlightDataAnalysis.Acceptance" />
   </ItemGroup>
 
 </Project>

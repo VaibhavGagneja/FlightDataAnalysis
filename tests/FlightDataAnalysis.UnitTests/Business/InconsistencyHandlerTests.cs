@@ -12,7 +12,6 @@ namespace FlightDataAnalysis.UnitTests.Business
     [TestFixture]
     public class InconsistencyHandlerTests
     {
-
         /// <summary>
         /// Validates validate method. 
         /// </summary>

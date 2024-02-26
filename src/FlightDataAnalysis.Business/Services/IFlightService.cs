@@ -1,6 +1,7 @@
 ﻿namespace FlightDataAnalysis.Business.Services
 {
     using FlightDataAnalysis.Business.Models;
+    using FlightDataAnalysis.Data.Models;
 
     /// <summary>
     /// Provides actions to retrieve flights.
@@ -25,5 +26,13 @@
         /// </summary>
         /// <returns>returns an instance of <see cref="IReadOnlyCollection{FlightOption}"/>.</returns>
         IReadOnlyCollection<FlightOption> GetFlightOptions();
+
+        /// <summary>
+        /// Gets paged flight response.
+        /// </summary>
+        /// <param name="pageNumber">The page number.</param>
+        /// <param name="pageSize">The page size.</param>
+        /// <returns>returns an instance of <see cref="PagedList{FlightOption}"/>.</returns>
+        PagedList<FlightEntity> GetPaged(int pageNumber, int pageSize);
     }
 }
