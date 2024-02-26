@@ -1,7 +1,7 @@
-# Your Project Name
+# Flight Analysis
 
 ## Overview
-Briefly describe your project and its purpose.
+This is simple web api project using .NET8. 
 
 ## Table of Contents
 - [Prerequisites](#prerequisites)
