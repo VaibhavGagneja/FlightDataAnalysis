@@ -188,12 +188,12 @@ namespace FlightDataAnalysis.UnitTests.Business
                 new ()
                 {
                     Id = 1,
-                    AircraftRegistrationNumber = "ZX-IKD",
+                    FlightNumber = "M645",
                 },
                 new ()
                 {
                     Id = 996,
-                    AircraftRegistrationNumber = "G-DIX",
+                    FlightNumber = "AY120",
                 },
             };
 

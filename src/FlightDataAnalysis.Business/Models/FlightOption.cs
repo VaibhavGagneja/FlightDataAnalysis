@@ -14,9 +14,9 @@
         public int Id { get; set; }
 
         /// <summary>
-        /// Gets or sets aircraftRegistrationNumber.
+        /// Gets or sets flightNumber.
         /// </summary>
-        [JsonProperty(PropertyName = "aircraftRegistrationNumber")]
-        public string AircraftRegistrationNumber { get; set; }
+        [JsonProperty(PropertyName = "flightNumber")]
+        public string FlightNumber { get; set; }
     }
 }

@@ -29,15 +29,15 @@ Scenario: Get flight by id
 Scenario: Get flight options 
     When Flight options api is called 
     Then The system returns the flight options
-    | Id   | AircraftRegistrationNumber |
-    | 1    | ZX-IKD                     |
-    | 996  | G-DIX                      |
-    | 997  | G-DIX                      |
-    | 994  | G-DIX                      |
-    | 995  | G-DIX                      |
-    | 999  | C-RIB                      |
-    | 998  | C-RIB                      |
-    | 1000 | C-RIB                      |
+    | Id   | FlightNumber |
+    | 1    | M645         |
+    | 996  | AY120        |
+    | 997  | AY120        |
+    | 994  | AY120        |
+    | 995  | AY120        |
+    | 999  | AY123        |
+    | 998  | AY123        |
+    | 1000 | AY123        |
 
 Scenario: Get flight by pagination 
     When Flight paged api is called by page size "2" page number "1"
