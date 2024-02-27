@@ -34,7 +34,7 @@
 
                 if (validationResult.IsInconsistent)
                 {
-                    inConsistentFlights.AddRange(flight.ToList());
+                    inConsistentFlights.AddRange(validationResult.InconsistentFlights.ToList());
                 }
             }
 

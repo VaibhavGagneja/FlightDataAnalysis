@@ -20,7 +20,7 @@
             /// </summary>
             internal const string FlightOptionsUrl = $"{Prefix}/options";
 
-            private const string Prefix = "api/v1/flight";
+            private const string Prefix = "api/v1/flights";
 
             /// <summary>
             /// Provides URL for flight by id.

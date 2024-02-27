@@ -11,7 +11,7 @@
     /// <summary>
     /// Provides API endpoints for flights.
     /// </summary>
-    [Route("api/v1/flight")]
+    [Route("api/v1/flights")]
     [ApiController]
     [ApiVersion("1.0")]
     [Consumes(MediaTypeNames.Application.Json)]
