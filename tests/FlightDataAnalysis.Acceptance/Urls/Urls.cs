@@ -32,11 +32,10 @@
             /// <summary>
             /// Provides paged url.
             /// </summary>
-            /// <param name="pageSize">The page size.</param>
             /// <param name="pageNumber">The page number.</param>
+            /// <param name="pageSize">The page size.</param>
             /// <returns>returns the paged url.</returns>
             internal static string FlightPagedUrl(int pageNumber, int pageSize) => $"{Prefix}/paged?pageNumber={pageNumber}&pageSize={pageSize}";
-
         }
 
         /// <summary>
