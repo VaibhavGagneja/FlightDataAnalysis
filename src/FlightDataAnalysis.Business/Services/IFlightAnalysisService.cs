@@ -1,5 +1,6 @@
 ﻿namespace FlightDataAnalysis.Business.Services
 {
+    using FlightDataAnalysis.Business.Models;
     using FlightDataAnalysis.Data.Models;
 
     /// <summary>
@@ -11,6 +12,6 @@
         /// Gets the flight analysis.
         /// </summary>
         /// <returns>returns an instance of <see cref="IReadOnlyCollection{FlightEntity}"/>.</returns>
-        IReadOnlyCollection<FlightEntity> GetAnalysisReport();
+        IReadOnlyCollection<Flight> GetAnalysisReport();
     }
 }

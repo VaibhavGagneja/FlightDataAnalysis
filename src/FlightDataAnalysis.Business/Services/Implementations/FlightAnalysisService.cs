@@ -1,5 +1,7 @@
 ﻿namespace FlightDataAnalysis.Business.Services.Implementations
 {
+    using AutoMapper;
+    using FlightDataAnalysis.Business.Models;
     using FlightDataAnalysis.Business.Services;
     using FlightDataAnalysis.Data.Models;
     using FlightDataAnalysis.Data.Provider;
@@ -9,20 +11,23 @@
     {
         private readonly IDataProvider provider;
         private readonly IInconsistencyValidator consistencyValidator;
+        private readonly IMapper mapper;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="FlightAnalysisService"/> class.
         /// </summary>
         /// <param name="provider">The provider.</param>
         /// <param name="consistencyValidator">The validation handler.</param>
-        public FlightAnalysisService(IDataProvider provider, IInconsistencyValidator consistencyValidator)
+        /// <param name="mapper">The mapper.</param>
+        public FlightAnalysisService(IDataProvider provider, IInconsistencyValidator consistencyValidator, IMapper mapper)
         {
             this.provider = provider;
             this.consistencyValidator = consistencyValidator;
+            this.mapper = mapper;
         }
 
         /// <inheritdoc />
-        public IReadOnlyCollection<FlightEntity> GetAnalysisReport()
+        public IReadOnlyCollection<Flight> GetAnalysisReport()
         {
             var flights = this.provider.GetFlights();
             var flightGroups = flights.GroupBy(x => x.AircraftRegistrationNumber);
@@ -38,7 +43,7 @@
                 }
             }
 
-            return inConsistentFlights;
+            return this.mapper.Map<IReadOnlyCollection<Flight>>(inConsistentFlights);
         }
     }
 }

@@ -2,8 +2,8 @@
 {
     using System.Net.Mime;
     using Asp.Versioning;
+    using FlightDataAnalysis.Business.Models;
     using FlightDataAnalysis.Business.Services;
-    using FlightDataAnalysis.Data.Models;
     using Microsoft.AspNetCore.Mvc;
 
     /// <summary>
@@ -33,8 +33,8 @@
         /// </summary>
         /// <returns>returns an instance of <see cref="IReadOnlyCollection{FlightEntity}"/>.</returns>
         [HttpGet]
-        [ProducesResponseType<IReadOnlyCollection<FlightEntity>>(StatusCodes.Status200OK)]
-        public IReadOnlyCollection<FlightEntity> Get()
+        [ProducesResponseType<IReadOnlyCollection<Flight>>(StatusCodes.Status200OK)]
+        public IReadOnlyCollection<Flight> Get()
         {
             return this.flightAnalysisService.GetAnalysisReport();
         }

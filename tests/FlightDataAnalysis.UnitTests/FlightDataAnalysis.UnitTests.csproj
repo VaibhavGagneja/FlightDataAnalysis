@@ -39,5 +39,6 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\FlightDataAnalysis.Business\FlightDataAnalysis.Business.csproj" />
     <ProjectReference Include="..\..\src\FlightDataAnalysis.Data\FlightDataAnalysis.Data.csproj" />
+    <ProjectReference Include="..\..\src\FlightDataAnalysis\FlightDataAnalysis.csproj" />
   </ItemGroup>
 </Project>

@@ -13,7 +13,7 @@ namespace FlightDataAnalysis.UnitTests.Business
     public class InconsistencyHandlerTests
     {
         /// <summary>
-        /// Validates validate method. 
+        /// Validates validate method.
         /// </summary>
         [Test]
         public void Validate_ShouldReturnInconsistencyResult()
@@ -45,7 +45,7 @@ namespace FlightDataAnalysis.UnitTests.Business
 
             result.IsInconsistent.Should().BeTrue();
 
-            inconsistentFlights.Should().BeEquivalentTo(result.InconsistentFlights);
+            result.InconsistentFlights.Should().BeEquivalentTo(inconsistentFlights.Skip(1));
         }
 
         /// <summary>

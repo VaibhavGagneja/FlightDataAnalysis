@@ -1,8 +1,10 @@
-﻿using FlightDataAnalysis.Business.Models;
+﻿using AutoMapper;
+using FlightDataAnalysis.Business.Models;
 using FlightDataAnalysis.Business.Services;
 using FlightDataAnalysis.Business.Services.Implementations;
 using FlightDataAnalysis.Data.Models;
 using FlightDataAnalysis.Data.Provider;
+using FlightDataAnalysis.Infrastructure.AutoMapper.Profiles;
 using FluentAssertions;
 using Moq;
 
@@ -22,8 +24,10 @@ namespace FlightDataAnalysis.UnitTests.Business
         {
             var mockDataProvider = new Mock<IDataProvider>();
             var mockValidator = new Mock<IInconsistencyValidator>();
+            var autoMapperConfig = new MapperConfiguration(cfg => cfg.AddProfile<FlightProfile>());
+            var mapper = autoMapperConfig.CreateMapper();
 
-            var flightAnalysisService = new FlightAnalysisService(mockDataProvider.Object, mockValidator.Object);
+            var flightAnalysisService = new FlightAnalysisService(mockDataProvider.Object, mockValidator.Object, mapper);
 
             var flights = new List<FlightEntity>
             {

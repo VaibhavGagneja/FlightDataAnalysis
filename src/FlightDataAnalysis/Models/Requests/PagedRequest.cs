@@ -11,14 +11,12 @@ namespace FlightDataAnalysis.Models.Requests
         /// Gets or sets page number.
         /// </summary>
         [JsonProperty(PropertyName = "pageNumber", DefaultValueHandling = DefaultValueHandling.Populate)]
-        [DefaultValue(1)]
-        public int PageNumber { get; set; }
+        public int PageNumber { get; set; } = 1;
 
         /// <summary>
         /// Gets or sets page size.
         /// </summary>
         [JsonProperty(PropertyName = "pageSize", DefaultValueHandling = DefaultValueHandling.Populate)]
-        [DefaultValue(10)]
-        public int PageSize { get; set; }
+        public int PageSize { get; set; } = 10;
     }
 }

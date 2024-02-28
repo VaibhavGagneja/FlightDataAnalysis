@@ -30,7 +30,6 @@
                     continue;
                 }
 
-                inConsistentFlights.Add(currentFlight);
                 inConsistentFlights.Add(nextFlight);
             }
 

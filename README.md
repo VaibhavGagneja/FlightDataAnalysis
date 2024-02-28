@@ -9,7 +9,7 @@ The Web Service exposes several APIs. The APIs are related to flights and flight
 
 * Get All Flights : `GET /api/v1/flights`
 * Get Specific Flight by ID : `GET /api/v1/flights/{id}`
-* Get Flight Options : `GET /api/v1/flights/options`
+* Get Flight Options(returns only id and flight number) : `GET /api/v1/flights/options`
 * Get Flights by Pagination : `GET /api/v1/flights/paged?pageNumber=1&pageSize=10`
 
 ### Flight Inconsistency API
@@ -21,7 +21,6 @@ The Web Service exposes several APIs. The APIs are related to flights and flight
   - [API Endpoints](#api-endpoints)
     - [Flight API](#flight-api)
     - [Flight Inconsistency API](#flight-inconsistency-api)
-  - [Table of Contents](#table-of-contents)
   - [Prerequisites](#prerequisites)
   - [Getting Started](#getting-started)
     - [Installation](#installation)

@@ -137,8 +137,8 @@ namespace FlightDataAnalysis.Acceptance.StepDefinitions
         /// <summary>
         /// Calls flight paged api.
         /// </summary>
-        /// <param name="number">Page number.</param>
         /// <param name="size">Page size.</param>
+        /// <param name="number">Page number.</param>
         /// <returns>returns an instance of <see cref="Task"/>.</returns>
         [When(@"Flight paged api is called by page size ""([^""]*)"" page number ""([^""]*)""")]
         public async Task WhenFlightPagedApiIsCalledByPageSizePageNumber(string size, string number)
