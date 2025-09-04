@@ -39,7 +39,6 @@
             {
                 throw new EntityNotFoundException(nameof(Flight), $"{id}");
             }
-            Console.WriteLine("in here");
 
             return this.mapper.Map<Flight>(flight);
         }

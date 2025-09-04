@@ -4,8 +4,6 @@
 This is simple web api project using .NET8.0 which anlyzes the flight chain.
 The Web Service exposes several APIs. The APIs are related to flights and flight chain inconsistency analysis.
 
-`flights.csv` contains the data file. Much data is not add. Add more data as per need.
-
 ## API Endpoints
 ### Flight API
 
