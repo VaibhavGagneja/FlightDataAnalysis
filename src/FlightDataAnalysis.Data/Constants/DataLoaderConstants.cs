@@ -8,6 +8,6 @@
         /// <summary>
         /// Default csv file delimiter.
         /// </summary>
-        internal const string DefaultDelimiter = ",";
+        internal const string DefaultDelimiter = ";";
     }
 }
